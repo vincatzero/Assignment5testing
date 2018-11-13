@@ -37,7 +37,8 @@
 		"git.autofetch": true,
 		"python.autoComplete.addBrackets": true,
 		"files.associations": {
-			"iosfwd": "cpp"
+			"iosfwd": "cpp",
+			"iostream": "cpp"
 		}
 	}
 }
