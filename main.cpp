@@ -1,15 +1,18 @@
-/*	Project:    NAME OF PROJECT GOES HERE
-	Name:       YOUR NAME GOES HERE
-    Partner:    PARTNER'S NAME IF ANY
-    Class:      example: CSC 1810 - Section 1
+/*	Project:    Gene Sequencer
+	Name:       Omar Cataldo
+    Class:      CSC 1810 - Section 3
 */
 
 #include <iostream>
+#include <string>
+#include <fstream>
+#include "Allele.h"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
+
 	string UserOption;
 	while (UserOption != "6")
 	{
@@ -23,7 +26,7 @@ int main(int argc, char *argv[])
 			 << "5 - Combine Chromosomes" << endl
 			 << "6 - Exit" << endl
 			 << endl
-			 << "Please Enter your Choice (1-6) :";
+			 << "Please Enter your Choice (1-6): ";
 		getline(cin, UserOption);
 		while ((UserOption > "6") || (UserOption < "1") || (UserOption.length() > 1))
 		{
@@ -34,8 +37,18 @@ int main(int argc, char *argv[])
 	int userChoice = stoi(UserOption);
 	switch (userChoice)
 	{
+	case 1:
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
 	case 6:
-		cout << "so long fuckers";
+		cout << "so long fuckers" << endl;
 		break;
 	}
 
@@ -47,7 +60,3 @@ int main(int argc, char *argv[])
 	}
 	return 0;
 }
-
-//testing testing
-
-//check this out

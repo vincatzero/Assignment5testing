@@ -1,1 +1,3 @@
-main.o: main.cpp
+main.o: main.cpp Allele.h
+
+Allele.h:
