@@ -12,6 +12,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+	Allele Alleles;
 
 	string UserOption;
 	while (UserOption != "6")
@@ -33,23 +34,24 @@ int main(int argc, char *argv[])
 			cout << "Please enter a valid choice: ";
 			getline(cin, UserOption);
 		}
-	}
-	int userChoice = stoi(UserOption);
-	switch (userChoice)
-	{
-	case 1:
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	case 4:
-		break;
-	case 5:
-		break;
-	case 6:
-		cout << "so long fuckers" << endl;
-		break;
+
+		int userChoice = stoi(UserOption);
+		switch (userChoice)
+		{
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			Alleles.WriteAlleleToFile(Alleles.AlleleInFile);
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		}
 	}
 
 	// This causes the program to pause at its completion.
