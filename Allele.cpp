@@ -9,18 +9,9 @@ using namespace std;
 
 void Allele::WriteAlleleToFile(ofstream &x)
 {
-	AlleleInFile.open("Alleles.csv", ios::app);
 
-	if (!AlleleInFile.is_open())
-	{
-		cout << "Error opening file" << endl;
-	}
-	else
-	{
-		cout << "Success creating/opening file" << endl; //just for testing
-	}
-	AlleleInFile << getGeneName() + "," << getGeneTrait() + "," << getVariantName_1() + "," << getVariantType_1() + ","
-				 << getNucleotideSequence_1() + "," << getVariantName_2() + "," << getVariantType_2() + "," << getNucleotideSequence_2() << endl;
+	AlleleInFile << getVariantName_1() + "," << getVariantType_1() + "," << getNucleotideSequence_1() + ","
+				 << getVariantName_2() + "," << getVariantType_2() + "," << getNucleotideSequence_2() << endl;
 }
 void Allele::setVariantNames(string x, string y)
 {
@@ -46,12 +37,6 @@ void Allele::setVariantTypes(string x, string y)
 
 string Allele::getVariantType_1() const { return variantType_1; }
 string Allele::getVariantType_2() const { return variantType_2; }
-
-void Allele::setGeneName(string x) { x = geneName; }
-string Allele::getGeneName() const { return geneName; }
-
-void Allele::setGeneTriat(string x) { x = geneTrait; }
-string Allele::getGeneTrait() const { return geneTrait; }
 
 /*void Allele::buildGene(string name, string trait, string A_Variant, string A_Type, string A_NucleotideSequence, string B_Variant, string B_type, string B_NucleotideSequence)
 {

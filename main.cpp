@@ -7,19 +7,20 @@
 #include <string>
 #include <fstream>
 #include "Allele.h"
+#include "Gene.h"
 
 using namespace std;
 
-int main(int argc, char *argv[])
+void runMenu()
 {
 	Allele Alleles;
+	Gene Genes;
 
 	string UserOption;
 	while (UserOption != "6")
 	{
 		cout << "        * MENU *" << endl
 			 << endl
-
 			 << "1 - Create Chromosome" << endl
 			 << "2 - Analyze Chromosome" << endl
 			 << "3 - Output Chromosome to File" << endl
@@ -43,7 +44,7 @@ int main(int argc, char *argv[])
 		case 2:
 			break;
 		case 3:
-			Alleles.WriteAlleleToFile(Alleles.AlleleInFile);
+			Genes.WriteGeneToFile(Genes.GeneInFile);
 			break;
 		case 4:
 			break;
@@ -53,6 +54,11 @@ int main(int argc, char *argv[])
 			break;
 		}
 	}
+};
+
+int main(int argc, char *argv[])
+{
+	runMenu();
 
 	// This causes the program to pause at its completion.
 	{
@@ -62,4 +68,3 @@ int main(int argc, char *argv[])
 	}
 	return 0;
 }
-//desktop test
