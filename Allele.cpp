@@ -19,10 +19,16 @@ void Allele::WriteAlleleToFile(ofstream &x)
 	{
 		cout << "Success creating/opening file" << endl; //just for testing
 	}
-	AlleleInFile << getGeneName() + "," << getGeneTrait() + "," << getVariantName() + "," << getVariantType_1() + "," << getNucleotideSequence_1();
+	AlleleInFile << getGeneName() + "," << getGeneTrait() + "," << getVariantName_1() + "," << getVariantType_1() + ","
+				 << getNucleotideSequence_1() + "," << getVariantName_2() + "," << getVariantType_2() + "," << getNucleotideSequence_2() << endl;
 }
-void Allele::setVariantName(string x) { x = variantName; }
-string Allele::getVariantName() const { return variantName; }
+void Allele::setVariantNames(string x, string y)
+{
+	x = variantName_1;
+	y = variantName_2;
+}
+string Allele::getVariantName_1() const { return variantName_1; }
+string Allele::getVariantName_2() const { return variantName_2; }
 
 void Allele::setNucleotideSequences(string x, string y)
 {
@@ -30,6 +36,7 @@ void Allele::setNucleotideSequences(string x, string y)
 	y = nucleotideSequence_2;
 }
 string Allele::getNucleotideSequence_1() const { return nucleotideSequence_1; }
+string Allele::getNucleotideSequence_2() const { return nucleotideSequence_2; }
 
 void Allele::setVariantTypes(string x, string y)
 {
@@ -38,6 +45,7 @@ void Allele::setVariantTypes(string x, string y)
 }
 
 string Allele::getVariantType_1() const { return variantType_1; }
+string Allele::getVariantType_2() const { return variantType_2; }
 
 void Allele::setGeneName(string x) { x = geneName; }
 string Allele::getGeneName() const { return geneName; }
