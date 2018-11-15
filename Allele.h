@@ -19,8 +19,8 @@ class Allele
 	void setVariantName(string x);
 	string getVariantName() const;
 
-	void setNucleotideSequence(string x);
-	string getNucleotideSequence() const;
+	void setNucleotideSequence(string x, string y);
+	string getNucleotideSequence_1() const;
 
 	void setVariantType(string x);
 	string getVariantType() const;
@@ -31,11 +31,23 @@ class Allele
 	void setGeneTriat(string x);
 	string getGeneTrait() const;
 
+	Allele()
+	{
+		geneName = "noNameYet";
+		geneTrait = "noTraitYet";
+		variantName = "noVariantYet";
+		variant_1 = "noTypeYet";
+		nucleotideSequence_1 = "xxxx1";
+		nucleotideSequence_2 + "xxxx2";
+	};
+
   private:
 	bool
 	RunUnitTests();
-	string nucleotideSequence;
+	string nucleotideSequence_1;
+	string nucleotideSequence_2;
 	string variantName;
+	string variant_1;
 	string variantType;
 	string geneName;
 	string geneTrait;
