@@ -13,8 +13,8 @@ class Allele
 	};
 	// come back to constructors  */
 
-	void WriteAlleleToFile(ofstream &x); //change "x"
-	ofstream AlleleInFile;				 //make private?
+	string WriteAlleleToFile(ofstream &x); //change "x"
+	ofstream AlleleInFile;				   //make private?
 
 	void setVariantNames(string x, string y);
 	string getVariantName_1() const;

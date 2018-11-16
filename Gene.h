@@ -8,11 +8,14 @@ using namespace std;
 class Gene
 {
   public:
+	void testFunction();
+	Allele allele;
+
 	ofstream GeneInFile;
 	void WriteGeneToFile(ofstream &x);
 	void setGeneName(string x);
 	string getGeneName() const;
-	Allele.WriteAlleleToFile(ofstream &x);
+	//allele.WriteAlleleToFile(x);
 
 	void setGeneTriat(string x);
 	string getGeneTrait() const;
@@ -26,5 +29,4 @@ class Gene
   private:
 	string geneName;
 	string geneTrait;
-	Allele allele;
 };

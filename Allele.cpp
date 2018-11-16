@@ -7,11 +7,14 @@ using namespace std;
 
 //ifstream Allele::WriteAlleleToFile("file.csv");
 
-void Allele::WriteAlleleToFile(ofstream &x)
+string Allele::WriteAlleleToFile(ofstream &x)
 {
-
+	string g;
+	AlleleInFile.open("Genes.csv", ios::app);
 	AlleleInFile << getVariantName_1() + "," << getVariantType_1() + "," << getNucleotideSequence_1() + ","
 				 << getVariantName_2() + "," << getVariantType_2() + "," << getNucleotideSequence_2() << endl;
+	AlleleInFile.close();
+	return g;
 }
 void Allele::setVariantNames(string x, string y)
 {

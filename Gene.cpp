@@ -18,7 +18,9 @@ void Gene::WriteGeneToFile(ofstream &x)
 		cout << "Success creating/opening file" << endl; //just for testing
 	}
 	GeneInFile << getGeneName() + "," << getGeneTrait() + ",";
-	Gene::allele.WriteAlleleToFile(ofstream & x); //problem here?
+	GeneInFile.close();
+
+	Gene::allele.WriteAlleleToFile(allele.AlleleInFile); //problem here?
 }
 
 void Gene::setGeneName(string x) { x = geneName; }
