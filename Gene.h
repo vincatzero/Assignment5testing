@@ -8,7 +8,7 @@ using namespace std;
 class Gene
 {
   public:
-	void testFunction();
+	//void testFunction();
 	Allele allele;
 
 	ofstream GeneInFile;

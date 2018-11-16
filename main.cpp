@@ -8,6 +8,7 @@
 #include <fstream>
 #include "Allele.h"
 #include "Gene.h"
+#include "Chromosome.h"
 
 using namespace std;
 
@@ -15,11 +16,13 @@ void runMenu()
 {
 	Allele Alleles;
 	Gene Genes;
+	Chromosome Chromosomes;
 
 	string UserOption;
 	while (UserOption != "6")
 	{
-		cout << "        * MENU *" << endl
+		cout << endl
+			 << "        * MENU *" << endl
 			 << endl
 			 << "1 - Create Chromosome" << endl
 			 << "2 - Analyze Chromosome" << endl
@@ -30,6 +33,7 @@ void runMenu()
 			 << endl
 			 << "Please Enter your Choice (1-6): ";
 		getline(cin, UserOption);
+		cout << endl;
 		while ((UserOption > "6") || (UserOption < "1") || (UserOption.length() > 1))
 		{
 			cout << "Please enter a valid choice: ";
@@ -42,6 +46,7 @@ void runMenu()
 		case 1:
 			break;
 		case 2:
+			Chromosomes.anaylzeGenotype(); //FIXME if you pick "2" without having entered a gene, then press "6", console acts funny
 			break;
 		case 3:
 			Genes.WriteGeneToFile(Genes.GeneInFile);
@@ -63,8 +68,10 @@ int main(int argc, char *argv[])
 	// This causes the program to pause at its completion.
 	{
 		char c;
-		cout << "Hit enter to exit:";
+		cout << "Press enter to exit:";
 		cin.get(c);
 	}
 	return 0;
 }
+// DOES PRAGMA ONCE GO IN MAIN? IN THE .CPP OR IN THE .H?
+//"\033[0;31m    No gene entered yet\033{0m\n" get color working

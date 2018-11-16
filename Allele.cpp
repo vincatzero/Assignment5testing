@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 string Allele::WriteAlleleToFile(ofstream &x)
 {
 	string g;
@@ -38,3 +37,12 @@ void Allele::setVariantTypes(string x, string y)
 
 string Allele::getVariantType_1() const { return variantType_1; }
 string Allele::getVariantType_2() const { return variantType_2; }
+
+void Allele::pressEnterToGoToMenu()
+{
+	char c;
+	cout << "Press enter to return to the menu:";
+	cin.get(c);
+	cout << flush;
+
+} //FIXME this doesn't work as intended

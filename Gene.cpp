@@ -20,7 +20,7 @@ void Gene::WriteGeneToFile(ofstream &x)
 	GeneInFile << getGeneName() + "," << getGeneTrait() + ",";
 	GeneInFile.close();
 
-	Gene::allele.WriteAlleleToFile(allele.AlleleInFile); //problem here?
+	allele.WriteAlleleToFile(allele.AlleleInFile); //problem here?
 }
 
 void Gene::setGeneName(string x) { x = geneName; }

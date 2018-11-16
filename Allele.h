@@ -28,6 +28,8 @@ class Allele
 	string getVariantType_1() const;
 	string getVariantType_2() const;
 
+	void pressEnterToGoToMenu();
+
 	Allele()
 	{
 
@@ -43,8 +45,10 @@ class Allele
 
   private:
 	bool RunUnitTests();
+
 	string nucleotideSequence_1;
 	string nucleotideSequence_2;
+
 	string variantName_1;
 	string variantName_2;
 
