@@ -3,9 +3,7 @@
 #include <iostream>
 
 using namespace std;
-//ifstream WriteAlleleToFile("file.csv");
 
-//ifstream Allele::WriteAlleleToFile("file.csv");
 
 string Allele::WriteAlleleToFile(ofstream &x)
 {
@@ -40,7 +38,3 @@ void Allele::setVariantTypes(string x, string y)
 
 string Allele::getVariantType_1() const { return variantType_1; }
 string Allele::getVariantType_2() const { return variantType_2; }
-
-/*void Allele::buildGene(string name, string trait, string A_Variant, string A_Type, string A_NucleotideSequence, string B_Variant, string B_type, string B_NucleotideSequence)
-{
-}*/

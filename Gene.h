@@ -15,7 +15,6 @@ class Gene
 	void WriteGeneToFile(ofstream &x);
 	void setGeneName(string x);
 	string getGeneName() const;
-	//allele.WriteAlleleToFile(x);
 
 	void setGeneTriat(string x);
 	string getGeneTrait() const;
