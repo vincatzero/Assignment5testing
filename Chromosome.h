@@ -41,6 +41,6 @@ class Chromosome
 
 	string userfile;
 	//ifstream userFile;
-	int counter;
+	int counter = 0;
 	string line;
 };

@@ -9,6 +9,7 @@
 #include "Allele.h"
 #include "Gene.h"
 #include "Chromosome.h"
+#include "GeneSequencer.h"
 
 using namespace std;
 

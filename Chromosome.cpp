@@ -87,31 +87,79 @@ void Chromosome::buildChromosomes(vector<Gene> &newChromosome)
 void Chromosome::inputChromosomeFromFile()
 {
 
-	cout << "What file would you like to import from:" << endl;
+	cout << "Enter the file would you like to import from:" << endl;
 	getline(cin, userfile);
 	ifstream userFile(userfile);
-	if (!userFile.is_open())
+
+	while (!userFile.is_open())
 	{
 		cout << endl
 			 << "Error opening file" << endl
 			 << "Press \"1\" to try again or \"2\" to return to the menu:";
 		string userOption;
 		getline(cin, userOption);
-	}
-	else
+
+		if (userOption == "1")
+		{
+			cout << "What file would you like to import from:" << endl;
+			getline(cin, userfile);
+			continue;
+		}							//fix redundency
+		else if (userOption == "2") //FIXME whole error checking system doesn't work
+		{
+
+			char c;
+			cin.get(c);
+			break; //FIXME hangs on enter
+		}
+		else
+		{
+			while (userOption != "1" || "2")
+			{
+				cout << "Invalid selection. Please enter \"1\" or \"2\":" << endl;
+				getline(cin, userOption); //FIXME works strangely}
+				break;
+			}
+		}
+	};
+
+	while (!userFile.eof())
 	{
-		cout << "what the fuck";
-	}
-	/*while (!userFile.eof())
-	{
-		getline(userFile, line);         //FIXME how did this code break everything?
+		getline(userFile, line); //FIXME counter number for file without emtpy last line
 		counter++;
-	}*/
-	while (userFile.good()) // (int i = 0; i < counter; i++)
-	{
-		getline(userFile, geneName, ',');
-		cout << "genename test " << geneName;
 	}
+	userFile.clear();
+	userFile.seekg(0, ios::beg);
+	for (int i = 0; i < (counter - 1); i++) // (int i = 0; i < counter; i++)   //CAN I USE .GOOD HERE AGAIN?
+	{
+		int linecount = 0;
+		linecount++;					  //FIXME - "# OF CHROMOSOMES FOUND. WOULD YOU LIKE TO VIEW THEM Y/N?"
+		getline(userFile, geneName, ','); //DO I HAVE TO INCLUDE THE USER OPTION TO PICK A SPECIFIC CHROMOSOME?
+		getline(userFile, geneTrait, ',');
+		getline(userFile, variant_1, ',');
+		getline(userFile, type_1, ',');
+		getline(userFile, e, ',');
+		getline(userFile, f, ',');
+		getline(userFile, g, ',');
+		getline(userFile, h, '\n');
+		cout << endl
+			 << "                   Chromosome " << i + 1 << " data " << endl
+			 << endl
+
+			 << "                   Gene name:       " << geneName << endl
+			 << "                   Gene trait:      " << geneTrait << endl
+			 << "                   Gene variant 1:  " << variant_1 << endl
+			 << type_1 << endl
+			 << e << endl
+			 << f << endl
+			 << g << endl
+			 << h << endl
+			 << "--------------";
+	}
+	userFile.close();
+	cout << endl
+		 << endl;
+	allele.pressEnterToGoToMenu();
 }
 
 /*string userfile;
@@ -121,7 +169,7 @@ void Chromosome::inputChromosomeFromFile()
 	getline(cin, userfile);		 //write checks
 	ifstream userFile(userfile); //count(istreambuf_iterator<char>(inFile), istreambuf_iterator<char>(), '\n');
 
-	/*while (!userFile.is_open())
+	while (!userFile.is_open())
 	{
 		cout << endl
 			 << "Error opening file" << endl

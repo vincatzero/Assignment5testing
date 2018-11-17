@@ -9,7 +9,7 @@ string Allele::WriteAlleleToFile(ofstream &x)
 	string g;
 	AlleleInFile.open("Genes.csv", ios::app);
 	AlleleInFile << getVariantName_1() + "," << getVariantType_1() + "," << getNucleotideSequence_1() + ","
-				 << getVariantName_2() + "," << getVariantType_2() + "," << getNucleotideSequence_2() << endl;
+				 << getVariantName_2() + "," << getVariantType_2() + "," << getNucleotideSequence_2() + "\n";
 	AlleleInFile.close();
 	return g;
 }
