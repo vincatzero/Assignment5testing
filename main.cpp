@@ -14,7 +14,7 @@ using namespace std;
 
 void runMenu()
 {
-	Allele Alleles;
+
 	Gene Genes;
 	Chromosome Chromosomes;
 
@@ -44,18 +44,21 @@ void runMenu()
 		switch (userChoice)
 		{
 		case 1:
+			Chromosomes.buildChromosomes(Chromosomes.GeneVector);
 			break;
 		case 2:
-			Chromosomes.anaylzeGenotype(); //FIXME if you pick "2" without having entered a gene, then press "6", console acts funny
+			Chromosomes.analyzeGenotype(); //FIXED? if you pick "2" without having entered a gene, then press "6", console acts funny
 			break;
 		case 3:
 			Genes.WriteGeneToFile(Genes.GeneInFile);
 			break;
 		case 4:
+			Chromosomes.inputChromosomeFromFile();
 			break;
 		case 5:
 			break;
 		case 6:
+			cout << Genes.getGeneName(); //FIXME delete this later
 			break;
 		}
 	}
@@ -63,6 +66,7 @@ void runMenu()
 
 int main(int argc, char *argv[])
 {
+
 	runMenu();
 
 	// This causes the program to pause at its completion.
@@ -74,4 +78,6 @@ int main(int argc, char *argv[])
 	return 0;
 }
 // DOES PRAGMA ONCE GO IN MAIN? IN THE .CPP OR IN THE .H?
+//CONSTRUCTORS
 //"\033[0;31m    No gene entered yet\033{0m\n" get color working
+//"3" comes back to strange menu thing

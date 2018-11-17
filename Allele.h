@@ -41,7 +41,18 @@ class Allele
 
 		nucleotideSequence_1 = "xxxx1";
 		nucleotideSequence_2 = "xxxx2";
-	};
+	}
+
+	Allele(string &variant_1, string &type_1, string &sequence_1, string &variant_2, string &type_2, string &sequence_2)
+	{
+		nucleotideSequence_1 = variant_1;
+		variantType_1 = type_1;
+		nucleotideSequence_1 = sequence_1;
+		variantName_2 = variant_2;
+		variant_2 = type_2;
+		nucleotideSequence_2 = sequence_2;
+	}
+	Allele(string &x) { nucleotideSequence_1 = x; }
 
   private:
 	bool RunUnitTests();
@@ -56,5 +67,4 @@ class Allele
 	string variantType_2;
 
 	string variantType;
-	//vector<string> AlleleInfo();
 };

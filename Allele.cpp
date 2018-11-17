@@ -43,6 +43,6 @@ void Allele::pressEnterToGoToMenu()
 	char c;
 	cout << "Press enter to return to the menu:";
 	cin.get(c);
-	cout << flush;
+	cout << flush; //flush needed?
 
 } //FIXME this doesn't work as intended

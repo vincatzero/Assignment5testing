@@ -28,3 +28,4 @@ string Gene::getGeneName() const { return geneName; }
 
 void Gene::setGeneTriat(string x) { x = geneTrait; }
 string Gene::getGeneTrait() const { return geneTrait; }
+

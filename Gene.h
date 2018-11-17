@@ -23,7 +23,14 @@ class Gene
 	{
 		geneName = "noNameYet";
 		geneTrait = "noTraitYet";
-	};
+	}
+
+	Gene(string &x, string &y, string &z)
+	{
+		geneName = x;
+		geneTrait = y;
+		setGeneTriat(x);
+	}
 
   private:
 	string geneName;
