@@ -69,7 +69,7 @@ void Chromosome::buildChromosomes(vector<Gene> &newChromosome)
 		allele.setNucleotideSequences(sequence_1, sequence_2); //not working
 		// gene.setGeneName(testy); //do i need the setters here?
 		//gene.setGeneTriat(trait);
-		gene.WriteGeneToFile(testy, trait);
+		//gene.WriteGeneToFile(userFile);
 
 		//Allele Alleles(string variant_1, string type_1, string sequence_1, string variant_2, string type_2, string sequence_2); //testing
 
@@ -242,3 +242,10 @@ void Chromosome::inputChromosomeFromFile()
 			 << h << endl
 			 << "--------------";
 		userFile.close();*/
+
+void Chromosome::writeChromosmeToFile(ofstream &, string &file)
+{
+	string x = file;
+
+	gene.WriteGeneToFile(userFile, x);
+};

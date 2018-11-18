@@ -8,29 +8,19 @@ using namespace std;
 class Gene
 {
   public:
-	//void testFunction();
 	Allele allele;
 
 	ofstream GeneInFile;
-	void WriteGeneToFile(string &title, string &trait);
+	void WriteGeneToFile(ofstream &, string userfile);
 	void setGeneName(string &x);
 	string getGeneName() const;
 
 	void setGeneTriat(string &x); //FIXME "trait" is spelled wrong
 	string getGeneTrait() const;
 
-	Gene()
-	{
-		geneName = "noNameYet";
-		geneTrait = "noTraitYet";
-	}
+	Gene();
 
-	Gene(string &x, string &y, string &z)
-	{
-		geneName = x;
-		geneTrait = y;
-		setGeneTriat(x);
-	}
+	Gene(string &x, string &y, string &z);
 
   private:
 	string geneName;

@@ -18,6 +18,9 @@ void runMenu()
 
 	Gene Genes;
 	Chromosome Chromosomes;
+	Allele Alleles;
+	ofstream test;
+	string x;
 
 	string UserOption;
 	while (UserOption != "6")
@@ -40,9 +43,12 @@ void runMenu()
 			cout << "Please enter a valid choice: ";
 			getline(cin, UserOption);
 		}
-		string x;
-		string y; //look into these
+
 		int userChoice = stoi(UserOption);
+
+		string x = "test2";
+		string y = "test4";
+
 		switch (userChoice)
 		{
 		case 1:
@@ -54,14 +60,19 @@ void runMenu()
 			Chromosomes.analyzeGenotype(); //FIXED? if you pick "2" without having entered a gene, then press "6", console acts funny
 			break;
 		case 3:
-			x = Genes.getGeneName();
-			y = Genes.getGeneTrait();
-			Genes.WriteGeneToFile(Chromosomes.testy, y);
+			cout << "Enter the file you would like to export to: " << endl;
+			getline(cin, x);
+
+			Chromosomes.writeChromosmeToFile(test, x);
 			break;
 		case 4:
 			Chromosomes.inputChromosomeFromFile();
 			break;
 		case 5:
+			cout << boolalpha << Alleles.alleleClassTestBench(); /*Alleles.setNucleotideSequences(x, y);
+			cout << Alleles.getNucleotideSequence_1() << Alleles.getNucleotideSequence_2();
+			Alleles.WriteAlleleToFile(); */
+
 			break;
 		case 6:
 			cout << Genes.getGeneName(); //FIXME delete this later
@@ -87,3 +98,4 @@ int main(int argc, char *argv[])
 //CONSTRUCTORS
 //"\033[0;31m    No gene entered yet\033{0m\n" get color working
 //"3" comes back to strange menu thing
+//why do lines of the menu not show up?

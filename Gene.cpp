@@ -4,12 +4,23 @@
 #include <iostream>
 
 using namespace std;
-
-void Gene::WriteGeneToFile(string &name, string &trait)
+Gene::Gene()
 {
-	Gene::setGeneName(name);
-	Gene::setGeneTriat(trait);
-	GeneInFile.open("Genes.csv", ios::app);
+	geneName = "noNameYet";
+	geneTrait = "noTraitYet";
+}
+
+Gene::Gene(string &x, string &y, string &z)
+{
+	geneName = x;
+	geneTrait = y;
+	setGeneTriat(x);
+}
+
+void Gene::WriteGeneToFile(ofstream &, string userfile)
+{
+
+	GeneInFile.open(userfile, ios::app);
 
 	if (!GeneInFile.is_open())
 	{
@@ -19,10 +30,11 @@ void Gene::WriteGeneToFile(string &name, string &trait)
 	{
 		cout << "Success creating/opening file" << endl; //just for testing
 	}
+
 	GeneInFile << getGeneName() + "," << getGeneTrait() + ","; //testing trait
 	GeneInFile.close();
 
-	allele.WriteAlleleToFile(); //problem here?
+	allele.WriteAlleleToFile(GeneInFile, userfile); //problem here?  //THIS IS PROBABLY ALL WRONG
 }
 
 void Gene::setGeneName(string &x) { geneName = x; }

@@ -6,15 +6,12 @@
 using namespace std;
 class Allele
 {
-  public:
-	/*  Allele()
-	{
-		Allele(string x, string y, string z){};
-	};
-	// come back to constructors  */
 
-	void WriteAlleleToFile(); //change "x"
-	ofstream AlleleInFile;	//make private?
+  public:
+	Allele(); //default contructor now defined in .cpp
+
+	ofstream AlleleInFile;							  //make private?
+	void WriteAlleleToFile(ofstream &, string &test); //change "x"
 
 	void setVariantNames(string &x, string &y);
 	string getVariantName_1() const;
@@ -30,19 +27,6 @@ class Allele
 
 	void pressEnterToGoToMenu();
 
-	Allele()
-	{
-
-		variantName_1 = "noVariantYet1";
-		variantName_2 = "noVariantYet2";
-
-		variantType_1 = "noTypeYet1";
-		variantType_2 = "noTypeYet2";
-
-		nucleotideSequence_1 = "xxxx1";
-		nucleotideSequence_2 = "xxxx2";
-	}
-
 	Allele(string &variant_1, string &type_1, string &sequence_1, string &variant_2, string &type_2, string &sequence_2)
 	{
 		nucleotideSequence_1 = variant_1;
@@ -53,6 +37,8 @@ class Allele
 		nucleotideSequence_2 = sequence_2;
 	}
 	Allele(string &x) { nucleotideSequence_1 = x; } //what is this?
+
+	bool alleleClassTestBench();
 
   private:
 	bool RunUnitTests();

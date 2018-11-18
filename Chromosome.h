@@ -23,6 +23,8 @@ class Chromosome
 
 	//Chromosome chromosomes;
 
+	void writeChromosmeToFile(ofstream &, string &file);
+
 	void analyzeGenotype();
 
 	vector<Gene> GeneVector; //DO I NEED TO HAVE GENE TWICE?
@@ -31,6 +33,7 @@ class Chromosome
 	void inputChromosomeFromFile();
 
 	Chromosome() {} //constructor?
+	ofstream userFile;
 
   private:
 	string expressedAllele;
