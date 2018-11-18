@@ -40,18 +40,23 @@ void runMenu()
 			cout << "Please enter a valid choice: ";
 			getline(cin, UserOption);
 		}
-
+		string x;
+		string y; //look into these
 		int userChoice = stoi(UserOption);
 		switch (userChoice)
 		{
 		case 1:
 			Chromosomes.buildChromosomes(Chromosomes.GeneVector);
+			cout << "back inside the menu. Gene trait = " << Genes.getGeneTrait();
+
 			break;
 		case 2:
 			Chromosomes.analyzeGenotype(); //FIXED? if you pick "2" without having entered a gene, then press "6", console acts funny
 			break;
 		case 3:
-			Genes.WriteGeneToFile(Genes.GeneInFile);
+			x = Genes.getGeneName();
+			y = Genes.getGeneTrait();
+			Genes.WriteGeneToFile(Chromosomes.testy, y);
 			break;
 		case 4:
 			Chromosomes.inputChromosomeFromFile();

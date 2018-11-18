@@ -11,6 +11,16 @@ class Chromosome
 	Allele allele;
 	Gene gene;
 
+	string testy;
+	string test;
+	string trait;
+	string variant_1;
+	string type_1;
+	string sequence_1;
+	string variant_2;
+	string type_2;
+	string sequence_2;
+
 	//Chromosome chromosomes;
 
 	void analyzeGenotype();
@@ -31,8 +41,8 @@ class Chromosome
 	//maybe i can reuse them for other stuff if i declare them in .h
 	string geneName;
 	string geneTrait;
-	string variant_1;
-	string type_1;
+	//string variant_1;
+	//string type_1;
 	string e;
 	string f;
 	string g;

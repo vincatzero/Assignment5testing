@@ -43,19 +43,12 @@ void Chromosome::analyzeGenotype()
 
 void Chromosome::buildChromosomes(vector<Gene> &newChromosome)
 {
-	string test;
-	string trait;
-	string variant_1;
-	string type_1;
-	string sequence_1;
-	string variant_2;
-	string type_2;
-	string sequence_2;
+
 	string moreChromosomes = "y";
 	while (moreChromosomes == "y") //put checks on input
 	{
 		cout << "Enter the gene name:" << endl;
-		getline(cin, test);
+		getline(cin, testy);
 		cout << "Enter the trait:" << endl;
 		getline(cin, trait);
 		cout << "Enter the allele 1 variant:(e.g.brown / blue / etc.)" << endl;
@@ -71,15 +64,20 @@ void Chromosome::buildChromosomes(vector<Gene> &newChromosome)
 		getline(cin, type_2);
 		cout << "Enter the allele 2 nucleotide sequence: (e.g. AGTC)" << endl;
 		getline(cin, sequence_2);
-
+		allele.setVariantNames(variant_1, variant_2); //why doens't this work?
+		allele.setVariantTypes(type_1, type_2);
 		allele.setNucleotideSequences(sequence_1, sequence_2); //not working
+		// gene.setGeneName(testy); //do i need the setters here?
+		//gene.setGeneTriat(trait);
+		gene.WriteGeneToFile(testy, trait);
 
-		Allele Alleles(string variant_1, string type_1, string sequence_1, string variant_2, string type_2, string sequence_2); //testing
+		//Allele Alleles(string variant_1, string type_1, string sequence_1, string variant_2, string type_2, string sequence_2); //testing
 
 		//Gene Genes;
-		newChromosome.push_back(Gene(test, trait, sequence_1));
+		//newChromosome.push_back(Gene(testy, trait, sequence_1));
 
 		cout << "Would you like to add another gene?" << endl;
+		cout << "TEST " << allele.getNucleotideSequence_1() << "-" << allele.getNucleotideSequence_2() << "-" << allele.getVariantName_1() << "-" << allele.getVariantName_2() << "-" << allele.getVariantType_1() << "-" << allele.getVariantType_2() << "-" << endl;
 		getline(cin, moreChromosomes);
 	};
 };

@@ -13,18 +13,18 @@ class Allele
 	};
 	// come back to constructors  */
 
-	string WriteAlleleToFile(ofstream &x); //change "x"
-	ofstream AlleleInFile;				   //make private?
+	void WriteAlleleToFile(); //change "x"
+	ofstream AlleleInFile;	//make private?
 
-	void setVariantNames(string x, string y);
+	void setVariantNames(string &x, string &y);
 	string getVariantName_1() const;
 	string getVariantName_2() const;
 
-	void setNucleotideSequences(string x, string y);
+	void setNucleotideSequences(string &x, string &y); //BY REFERENCE?
 	string getNucleotideSequence_1() const;
 	string getNucleotideSequence_2() const;
 
-	void setVariantTypes(string x, string y);
+	void setVariantTypes(string &x, string &y);
 	string getVariantType_1() const;
 	string getVariantType_2() const;
 
@@ -52,7 +52,7 @@ class Allele
 		variant_2 = type_2;
 		nucleotideSequence_2 = sequence_2;
 	}
-	Allele(string &x) { nucleotideSequence_1 = x; }
+	Allele(string &x) { nucleotideSequence_1 = x; } //what is this?
 
   private:
 	bool RunUnitTests();

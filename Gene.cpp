@@ -5,8 +5,10 @@
 
 using namespace std;
 
-void Gene::WriteGeneToFile(ofstream &x)
+void Gene::WriteGeneToFile(string &name, string &trait)
 {
+	Gene::setGeneName(name);
+	Gene::setGeneTriat(trait);
 	GeneInFile.open("Genes.csv", ios::app);
 
 	if (!GeneInFile.is_open())
@@ -17,15 +19,19 @@ void Gene::WriteGeneToFile(ofstream &x)
 	{
 		cout << "Success creating/opening file" << endl; //just for testing
 	}
-	GeneInFile << getGeneName() + "," << getGeneTrait() + ",";
+	GeneInFile << getGeneName() + "," << getGeneTrait() + ","; //testing trait
 	GeneInFile.close();
 
-	allele.WriteAlleleToFile(allele.AlleleInFile); //problem here?
+	allele.WriteAlleleToFile(); //problem here?
 }
 
-void Gene::setGeneName(string x) { x = geneName; }
+void Gene::setGeneName(string &x) { geneName = x; }
 string Gene::getGeneName() const { return geneName; }
 
-void Gene::setGeneTriat(string x) { x = geneTrait; }
-string Gene::getGeneTrait() const { return geneTrait; }
+void Gene::setGeneTriat(string &x)
+{
+	geneTrait = x;
 
+	cout << "this is inside the setgene trait. genetrait = " << getGeneTrait();
+}
+string Gene::getGeneTrait() const { return geneTrait; }
