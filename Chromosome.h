@@ -29,7 +29,7 @@ class Chromosome
 
 	vector<Gene> GeneVector; //DO I NEED TO HAVE GENE TWICE?
 
-	void buildChromosomes(vector<Gene> &newChromosome);
+	vector<Gene> buildChromosomes(vector<Gene> &);
 	void inputChromosomeFromFile();
 
 	Chromosome() {} //constructor?

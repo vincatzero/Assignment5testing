@@ -17,6 +17,12 @@ Allele::Allele()
 	nucleotideSequence_1 = "xxxx1";
 	nucleotideSequence_2 = "xxxx2";
 }
+Allele::Allele(string&variant, string&type, string&sequence){
+variant=variantName_1;
+variantType_1=type;
+nucleotideSequence_1=sequence;
+}
+
 
 void Allele::WriteAlleleToFile(ofstream &, string &userfile) //do i have to add an input here for user files and change the name of the file?
 {

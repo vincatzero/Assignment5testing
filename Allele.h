@@ -8,7 +8,8 @@ class Allele
 {
 
   public:
-	Allele(); //default contructor now defined in .cpp
+	Allele();
+	Allele(string &variant, string &type, string &sequence);
 
 	ofstream AlleleInFile;							  //make private?
 	void WriteAlleleToFile(ofstream &, string &test); //change "x"
@@ -17,7 +18,7 @@ class Allele
 	string getVariantName_1() const;
 	string getVariantName_2() const;
 
-	void setNucleotideSequences(string &x, string &y); //BY REFERENCE?
+	void setNucleotideSequences(string &x, string &y);
 	string getNucleotideSequence_1() const;
 	string getNucleotideSequence_2() const;
 

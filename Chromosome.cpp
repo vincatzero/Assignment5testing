@@ -41,7 +41,7 @@ void Chromosome::analyzeGenotype()
 	}
 };
 
-void Chromosome::buildChromosomes(vector<Gene> &newChromosome)
+vector<Gene> Chromosome::buildChromosomes(vector<Gene> &chromosomes)
 {
 
 	string moreChromosomes = "y";
@@ -49,6 +49,17 @@ void Chromosome::buildChromosomes(vector<Gene> &newChromosome)
 	{
 		gene.buildGenes();
 		allele.buildAlleles();
+		string varTest;
+		string typeTest;
+		string nucTest;
+		cout << "Enter the allele 1 variant:(e.g.brown / blue / etc.)" << endl;
+		getline(cin, varTest);
+		cout << "Enter the allele 1 type: (e.g. dominant or recessive)" << endl;
+		getline(cin, typeTest);
+		cout << "Enter the allele 1 nucleotide sequence: (e.g. AGTC)" << endl;
+		getline(cin, nucTest);
+
+		Allele newAlleleA(varTest, typeTest, nucTest);
 
 		/*allele.setVariantNames(variant_1, variant_2); //why doens't this work?
 		allele.setVariantTypes(type_1, type_2);
@@ -67,6 +78,7 @@ void Chromosome::buildChromosomes(vector<Gene> &newChromosome)
 		cout << "TEST " << allele.getNucleotideSequence_1() << "-" << allele.getNucleotideSequence_2() << "-" << allele.getVariantName_1() << "-" << allele.getVariantName_2() << "-" << allele.getVariantType_1() << "-" << allele.getVariantType_2() << "-" << endl;
 		getline(cin, moreChromosomes);
 	};
+	return chromosomes;
 };
 
 void Chromosome::inputChromosomeFromFile()
