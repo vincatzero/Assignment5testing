@@ -11,16 +11,17 @@ class Gene
 	Allele allele;
 
 	ofstream GeneInFile;
-	void WriteGeneToFile(ofstream &, string userfile);
+	void WriteGeneToFile(ofstream &, string &userfile);
 	void setGeneName(string &x);
 	string getGeneName() const;
 
-	void setGeneTriat(string &x); //FIXME "trait" is spelled wrong
+	void setGeneTrait(string &x);
 	string getGeneTrait() const;
 
 	Gene();
 
 	Gene(string &x, string &y, string &z);
+	void buildGenes();
 
   private:
 	string geneName;

@@ -1,6 +1,7 @@
 #include <fstream>
 #include "Allele.h"
 #include "Gene.h"
+#include "Chromosome.h"
 #include <iostream>
 
 using namespace std;
@@ -14,10 +15,10 @@ Gene::Gene(string &x, string &y, string &z)
 {
 	geneName = x;
 	geneTrait = y;
-	setGeneTriat(x);
+	setGeneTrait(x);
 }
 
-void Gene::WriteGeneToFile(ofstream &, string userfile)
+void Gene::WriteGeneToFile(ofstream &, string &userfile)
 {
 
 	GeneInFile.open(userfile, ios::app);
@@ -34,16 +35,30 @@ void Gene::WriteGeneToFile(ofstream &, string userfile)
 	GeneInFile << getGeneName() + "," << getGeneTrait() + ","; //testing trait
 	GeneInFile.close();
 
-	allele.WriteAlleleToFile(GeneInFile, userfile); //problem here?  //THIS IS PROBABLY ALL WRONG
+	allele.WriteAlleleToFile(GeneInFile, userfile); //problem here?
 }
 
 void Gene::setGeneName(string &x) { geneName = x; }
 string Gene::getGeneName() const { return geneName; }
 
-void Gene::setGeneTriat(string &x)
+void Gene::setGeneTrait(string &x)
 {
 	geneTrait = x;
 
-	cout << "this is inside the setgene trait. genetrait = " << getGeneTrait();
+	cout << endl
+		 << "this is inside the setgene trait. genetrait = " << getGeneTrait();
+	cout << "this gene trait = " << this->getGeneTrait();
 }
 string Gene::getGeneTrait() const { return geneTrait; }
+
+void Gene::buildGenes()
+{
+
+	cout << "Enter the gene name:" << endl;
+	getline(cin, geneName);
+	cout << "Enter the trait:" << endl;
+	getline(cin, geneTrait);
+
+	setGeneName(geneName);
+	setGeneTrait(geneTrait);
+};

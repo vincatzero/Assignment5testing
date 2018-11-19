@@ -46,14 +46,10 @@ void runMenu()
 
 		int userChoice = stoi(UserOption);
 
-		string x = "test2";
-		string y = "test4";
-
 		switch (userChoice)
 		{
 		case 1:
 			Chromosomes.buildChromosomes(Chromosomes.GeneVector);
-			cout << "back inside the menu. Gene trait = " << Genes.getGeneTrait();
 
 			break;
 		case 2:

@@ -27,7 +27,7 @@ class Allele
 
 	void pressEnterToGoToMenu();
 
-	Allele(string &variant_1, string &type_1, string &sequence_1, string &variant_2, string &type_2, string &sequence_2)
+	/*	Allele(string &variant_1, string &type_1, string &sequence_1, string &variant_2, string &type_2, string &sequence_2)
 	{
 		nucleotideSequence_1 = variant_1;
 		variantType_1 = type_1;
@@ -35,10 +35,11 @@ class Allele
 		variantName_2 = variant_2;
 		variant_2 = type_2;
 		nucleotideSequence_2 = sequence_2;
-	}
-	Allele(string &x) { nucleotideSequence_1 = x; } //what is this?
+	} */
+	//Allele(string &x) { nucleotideSequence_1 = x; } //what is this?
 
 	bool alleleClassTestBench();
+	void buildAlleles();
 
   private:
 	bool RunUnitTests();

@@ -47,26 +47,13 @@ void Chromosome::buildChromosomes(vector<Gene> &newChromosome)
 	string moreChromosomes = "y";
 	while (moreChromosomes == "y") //put checks on input
 	{
-		cout << "Enter the gene name:" << endl;
-		getline(cin, testy);
-		cout << "Enter the trait:" << endl;
-		getline(cin, trait);
-		cout << "Enter the allele 1 variant:(e.g.brown / blue / etc.)" << endl;
-		getline(cin, variant_1);
-		cout << "Enter the allele 1 type: (e.g. dominant or recessive)" << endl;
-		getline(cin, type_1);
-		cout << "Enter the allele 1 nucleotide sequence: (e.g. AGTC)" << endl;
-		getline(cin, sequence_1);
+		gene.buildGenes();
+		allele.buildAlleles();
 
-		cout << "Enter the allele 2 variant: (e.g.brown / blue / etc.)" << endl;
-		getline(cin, variant_2);
-		cout << "Enter the allele 2 type: (e.g. dominant or recessive)" << endl;
-		getline(cin, type_2);
-		cout << "Enter the allele 2 nucleotide sequence: (e.g. AGTC)" << endl;
-		getline(cin, sequence_2);
-		allele.setVariantNames(variant_1, variant_2); //why doens't this work?
+		/*allele.setVariantNames(variant_1, variant_2); //why doens't this work?
 		allele.setVariantTypes(type_1, type_2);
-		allele.setNucleotideSequences(sequence_1, sequence_2); //not working
+		allele.setNucleotideSequences(sequence_1, sequence_2);   */
+		//not working
 		// gene.setGeneName(testy); //do i need the setters here?
 		//gene.setGeneTriat(trait);
 		//gene.WriteGeneToFile(userFile);
@@ -243,9 +230,12 @@ void Chromosome::inputChromosomeFromFile()
 			 << "--------------";
 		userFile.close();*/
 
-void Chromosome::writeChromosmeToFile(ofstream &, string &file)
+void Chromosome::writeChromosmeToFile(ofstream &test, string &file)
 {
-	string x = file;
+	/*gene.setGeneName(this->testy);
+	gene.setGeneTrait(this->trait);
+	allele.setVariantNames(this->variant_1, this->variant_2);
+	allele.setVariantTypes(this->variant_1, this->variant_2); //MOST OF THIS WILL BE DELETED  */
 
-	gene.WriteGeneToFile(userFile, x);
+	gene.WriteGeneToFile(test, file);
 };

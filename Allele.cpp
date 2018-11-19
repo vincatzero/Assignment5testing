@@ -1,5 +1,7 @@
 #include <fstream>
 #include "Allele.h"
+#include "Gene.h"
+#include "Chromosome.h"
 #include <iostream>
 
 using namespace std;
@@ -25,6 +27,7 @@ void Allele::WriteAlleleToFile(ofstream &, string &userfile) //do i have to add 
 }
 void Allele::setVariantNames(string &x, string &y)
 {
+	//cout << this->variantName_1;
 	variantName_1 = x;
 	variantName_2 = y;
 }
@@ -56,6 +59,25 @@ void Allele::pressEnterToGoToMenu()
 	cout << flush; //flush needed?
 
 } //FIXME this doesn't work as intended
+void Allele::buildAlleles()
+{
+	cout << "Enter the allele 1 variant:(e.g.brown / blue / etc.)" << endl;
+	getline(cin, variantName_1);
+	cout << "Enter the allele 1 type: (e.g. dominant or recessive)" << endl;
+	getline(cin, variantType_1);
+	cout << "Enter the allele 1 nucleotide sequence: (e.g. AGTC)" << endl;
+	getline(cin, nucleotideSequence_1);
+
+	cout << "Enter the allele 2 variant: (e.g.brown / blue / etc.)" << endl;
+	getline(cin, variantName_2);
+	cout << "Enter the allele 2 type: (e.g. dominant or recessive)" << endl;
+	getline(cin, variantType_1);
+	cout << "Enter the allele 2 nucleotide sequence: (e.g. AGTC)" << endl;
+	getline(cin, nucleotideSequence_2);
+	setVariantNames(variantName_1, variantName_2);
+	setNucleotideSequences(nucleotideSequence_1, nucleotideSequence_2);
+	setVariantTypes(variantType_1, variantType_2);
+};
 
 bool Allele::alleleClassTestBench()
 {
